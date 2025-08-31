@@ -4,7 +4,7 @@ import Middle from "@/components/Middle";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="overflow-x-hidden">
       <Intro />
       <Middle />
       <Footer />

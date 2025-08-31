@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
+import Image from "next/image";
 
 import Header from "@/components/Header";
+import Wrapper from "@/components/Wrapper";
 
 import "./globals.css";
 
@@ -22,10 +24,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${IBMPlexSans.className} bg-[#FAFAFA] antialiased`}>
-        <Header />
-        {children}
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
+      <body
+        className={`${IBMPlexSans.className} relative overflow-x-hidden bg-[#FAFAFA] antialiased`}
+      >
+        <Wrapper>
+          <Image
+            src={"/bg-main-mobile.png"}
+            alt=""
+            fill
+            className="absolute inset-0 z-10 overflow-hidden md:hidden"
+          />
+          <Image
+            src={"/bg-main-tablet.png"}
+            alt=""
+            fill
+            className="absolute inset-0 z-10 hidden overflow-hidden md:block lg:hidden"
+          />
+          <Image
+            src={"/bg-main-desktop.png"}
+            alt=""
+            fill
+            className="absolute inset-0 z-10 hidden overflow-hidden md:hidden lg:block"
+          />
+          <Image
+            src={"/bg-pattern-1.svg"}
+            alt=""
+            width={312}
+            height={468}
+            className="absolute -top-12 -right-7 z-10 hidden md:block lg:right-0"
+          />
+        </Wrapper>
+        <div className="relative z-50">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -29,7 +29,7 @@ const Footer = () => {
             </h4>
           </div>
         </div>
-        <div className="flex w-[124px] items-center justify-between">
+        <div className="flex max-w-[124px] items-center justify-between gap-4">
           {/* Facebook */}
           <Tooltip>
             <TooltipTrigger>
