@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <body
-        className={`${IBMPlexSans.className} relative overflow-x-hidden bg-[#FAFAFA] antialiased`}
+        className={`${IBMPlexSans.className} relative mx-auto max-w-[90rem] overflow-x-hidden bg-[#FAFAFA] antialiased`}
       >
         <Wrapper>
           <Image
